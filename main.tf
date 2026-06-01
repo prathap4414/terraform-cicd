@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "6.28.0"
     }
   }
   backend "s3" {
-    bucket = "prathapbucket4413"
-    key    = "terraform/terraformstatefile.tfstate"
-    region = "ap-south-1"
+    bucket       = "prathapbucket4413"
+    key          = "terraform/terraformstatefile.tfstate"
+    region       = "ap-south-1"
     use_lockfile = true
   }
 }
@@ -31,7 +31,7 @@ variable "instance_name" {
 
 locals {
   common_tags = {
-    Name = var.instance_name
+    Name        = var.instance_name
     Environment = "Dev"
   }
 }
